@@ -55,3 +55,4 @@ freeline/
 freeline_project_description.json
 app/src/androidTest/
 app/src/test/java/com/lucky/wsy/wzx/ExampleUnitTest.java
+.idea/
