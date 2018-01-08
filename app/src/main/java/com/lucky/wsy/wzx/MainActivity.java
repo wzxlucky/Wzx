@@ -1,7 +1,7 @@
 package com.lucky.wsy.wzx;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import com.lucky.wsy.wzx.adapter.MainAdapter;
@@ -30,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
         mb = new MainBean();
         mb.setId("0");
         mb.setName("对话框flyco");
+        mList.add(mb);
+
+        mb = new MainBean();
+        mb.setId("1");
+        mb.setName("时间轴");
+        mList.add(mb);
+
+        mb = new MainBean();
+        mb.setId("2");
+        mb.setName("对话框2");
         mList.add(mb);
 
         mainAdapter = new MainAdapter(MainActivity.this, mList);

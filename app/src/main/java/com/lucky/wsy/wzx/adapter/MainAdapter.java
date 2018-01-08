@@ -7,11 +7,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.dialog.SweetActivity;
 import com.flyco.dialogsamples.ui.DialogHomeActivity;
 import com.lucky.wsy.wzx.R;
 import com.lucky.wsy.wzx.bean.MainBean;
+import com.timeline.TimeLineActivity;
 
-import java.lang.ref.WeakReference;
 import java.util.List;
 
 /**
@@ -66,6 +67,12 @@ public class MainAdapter extends BaseAdapter {
                         context.startActivity(intent);
                         break;
                     case 1:
+                        intent = new Intent(context, TimeLineActivity.class);
+                        context.startActivity(intent);
+                        break;
+                    case 2:
+                        intent = new Intent(context, SweetActivity.class);
+                        context.startActivity(intent);
                         break;
                 }
             }
