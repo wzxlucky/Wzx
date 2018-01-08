@@ -33,6 +33,8 @@ public class TimelineView extends View {
 
     public TimelineView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        mContext = context;
+        init(attrs);
     }
 
     private void init(AttributeSet attrs) {
@@ -102,7 +104,7 @@ public class TimelineView extends View {
             }
 
         } else {
-        //Marker in center is false
+            //Marker in center is false
             if (mMarker != null) {
                 mMarker.setBounds(pLeft, pTop, pLeft + markSize, pTop + markSize);
                 mBounds = mMarker.getBounds();

@@ -2,6 +2,7 @@ package com.dialog;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.lucky.wsy.wzx.R;
