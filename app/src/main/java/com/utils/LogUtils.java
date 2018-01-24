@@ -8,7 +8,7 @@ import android.util.Log;
 
 public class LogUtils {
 
-    public static final String TAG = "Jenly";
+    public static final String TAG = "wzx";
 
     public static final String COLON = ":";
 

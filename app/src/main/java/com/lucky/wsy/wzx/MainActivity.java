@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         mb = new MainBean();
         mb.setId("2");
-        mb.setName("对话框2");
+        mb.setName("对话框sweetAlert");
         mList.add(mb);
 
         mainAdapter = new MainAdapter(MainActivity.this, mList);

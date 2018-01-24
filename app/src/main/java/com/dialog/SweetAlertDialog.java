@@ -60,7 +60,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     private FrameLayout mWarningFrame;
     private OnSweetClickListener mCancelClickListener;
     private OnSweetClickListener mConfirmClickListener;
-    private OnSweetTwoClickListener mOnSweetCCClickListener;
+    private OnSweetTwoClickListener mOnSweetTwoClickListener;
     private boolean mCloseFromCancel;
 
     public static final int NORMAL_TYPE = 0;
@@ -357,8 +357,8 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         return this;
     }
 
-    public SweetAlertDialog setCCClickListener(OnSweetTwoClickListener listener) {
-        mOnSweetCCClickListener = listener;
+    public SweetAlertDialog setOnSweetTwoClickListener(OnSweetTwoClickListener listener) {
+        mOnSweetTwoClickListener = listener;
         return this;
     }
 
@@ -395,8 +395,8 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
             if (mCancelClickListener != null) {
                 mCancelClickListener.onClick(SweetAlertDialog.this);
             } else {
-                if (mOnSweetCCClickListener != null) {
-                    mOnSweetCCClickListener.onCancleClick(SweetAlertDialog.this);
+                if (mOnSweetTwoClickListener != null) {
+                    mOnSweetTwoClickListener.onCancleClick(SweetAlertDialog.this);
                 } else {
                     dismissWithAnimation();
                 }
@@ -405,8 +405,8 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
             if (mConfirmClickListener != null) {
                 mConfirmClickListener.onClick(SweetAlertDialog.this);
             } else {
-                if (mOnSweetCCClickListener != null) {
-                    mOnSweetCCClickListener.onConfirmClick(SweetAlertDialog.this);
+                if (mOnSweetTwoClickListener != null) {
+                    mOnSweetTwoClickListener.onConfirmClick(SweetAlertDialog.this);
                 } else {
                     dismissWithAnimation();
                 }

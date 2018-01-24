@@ -18,16 +18,20 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <!--对话框-->
+        <!--对话框flyco-->
         <activity
             android:name="com.flyco.dialogsamples.ui.DialogHomeActivity"
             android:screenOrientation="portrait"/>
 
         <!--时间轴-->
-        <activity android:name="com.timeline.TimeLineActivity"/>
+        <activity
+            android:name="com.timeline.TimeLineActivity"
+            android:screenOrientation="portrait"/>
 
-        <!--对话框-->
-        <activity android:name="com.dialog.SweetActivity"/>
+        <!--对话框SweetAlert-->
+        <activity
+            android:name="com.dialog.SweetActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -62,16 +62,16 @@ public class DialogUtils {
                 .show();
     }
 
-//    public static void warningCanceDialog(Context context, String title, String content, com.lucky.wzx.dialog.SweetAlertDialog.onSweetCCClickListener onSweetCCClickListener) {
-//        new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
-//                .setTitleText(title)
-//                .setContentText(content)
-//                .setCancelText("取消")
-//                .setConfirmText("确定")
-//                .showCancelButton(true)
-//                .setCCClickListener(onSweetCCClickListener)
-//                .show();
-//    }
+    public static void warningCanceDialog(Context context, String title, String content, SweetAlertDialog.OnSweetTwoClickListener onSweetTwoClickListener) {
+        new SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
+                .setTitleText(title)
+                .setContentText(content)
+                .setCancelText("取消")
+                .setConfirmText("确定")
+                .showCancelButton(true)
+                .setOnSweetTwoClickListener(onSweetTwoClickListener)
+                .show();
+    }
 
     public static void customImgDialog(Context context, String title, String text, int resId) {
         new SweetAlertDialog(context, SweetAlertDialog.CUSTOM_IMAGE_TYPE)
@@ -97,8 +97,8 @@ public class DialogUtils {
     public static void progressDialogShow(final Context context, String title) {
         pDialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE)
                 .setTitleText(title);
-        pDialog.show();
         pDialog.setCancelable(false);
+        pDialog.show();
         timeStart(context);
     }
 
@@ -142,47 +142,8 @@ public class DialogUtils {
                 }
             }
         };
-        timer.schedule(task, 1000,1000);
+        timer.schedule(task, 1000, 1000);
     }
-//        new Timer().schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                colorNum++;
-//                switch (colorNum) {
-//                    case 0:
-//                        pDialog.getProgressHelper().setBarColor(context.getResources().getColor(R.color.blue_btn_bg_color));
-//                        Log.i("ProgressDialogShow", "ProgressDialogShow: " + colorNum);
-//                        break;
-//                    case 1:
-//                        pDialog.getProgressHelper().setBarColor(context.getResources().getColor(R.color.material_deep_teal_50));
-//                        Log.i("ProgressDialogShow", "ProgressDialogShow: " + colorNum);
-//                        break;
-//                    case 2:
-//                        pDialog.getProgressHelper().setBarColor(context.getResources().getColor(R.color.success_stroke_color));
-//                        Log.i("ProgressDialogShow", "ProgressDialogShow: " + colorNum);
-//                        break;
-//                    case 3:
-//                        pDialog.getProgressHelper().setBarColor(context.getResources().getColor(R.color.material_deep_teal_20));
-//                        Log.i("ProgressDialogShow", "ProgressDialogShow: " + colorNum);
-//                        break;
-//                    case 4:
-//                        pDialog.getProgressHelper().setBarColor(context.getResources().getColor(R.color.material_blue_grey_80));
-//                        Log.i("ProgressDialogShow", "ProgressDialogShow: " + colorNum);
-//                        break;
-//                    case 5:
-//                        pDialog.getProgressHelper().setBarColor(context.getResources().getColor(R.color.warning_stroke_color));
-//                        Log.i("ProgressDialogShow", "ProgressDialogShow: " + colorNum);
-//                        break;
-//                    case 6:
-//                        pDialog.getProgressHelper().setBarColor(context.getResources().getColor(R.color.success_stroke_color));
-//                        Log.i("ProgressDialogShow", "ProgressDialogShow: " + colorNum);
-//                        colorNum = -1;
-//                        break;
-//                    default:
-//                }
-//            }
-//        }, 1000, 1000);
-//}
 
     public static void progressDialogHide() {
         if (pDialog != null) {
