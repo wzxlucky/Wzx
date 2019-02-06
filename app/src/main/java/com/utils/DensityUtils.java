@@ -1,90 +1,37 @@
-package com.utils;
+package com.one.wsy.wzxlib.util;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Point;
-import android.util.DisplayMetrics;
-import android.util.TypedValue;
 
 /**
- * Created by wsy on 2017/9/27.
+ * 日期: 2018/4/20 15:59
+ *
+ * @author wsy
  */
-
 public class DensityUtils {
 
     private DensityUtils() {
-        throw new AssertionError();
+        throw new UnsupportedOperationException("cannot be instantiated");
     }
 
-    /**
-     * dip转px
-     *
-     * @param context
-     * @param dipValue
-     * @return
-     */
-    public static int dip2px(Context context, float dipValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dipValue * scale + 0.5f);
+    //转换dip为px
+    public static int dip2px(Context context, int dip) {
+        float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dip * scale + 0.5f * (dip >= 0 ? 1 : -1));
     }
 
-    /**
-     * px转dip
-     *
-     * @param context
-     * @param pxValue
-     * @return
-     */
-    public static int px2dip(Context context, float pxValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (pxValue / scale + 0.5f);
+    //转换px为dip
+    public static int px2dip(Context context, int px) {
+        float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (px / scale + 0.5f * (px >= 0 ? 1 : -1));
     }
 
-    /**
-     * 获取屏幕宽度和高度，单位为px
-     *
-     * @param context
-     * @return
-     */
-    public static Point getScreenMetrics(Context context) {
-        DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        int wScreen = dm.widthPixels;
-        int hScreen = dm.heightPixels;
-        return new Point(wScreen, hScreen);
-
+    public static int sp2px(Context context, float spValue) {
+        float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (spValue * fontScale + 0.5f);
     }
 
-    public static int getScreenWidth(Context context) {
-        DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        int wScreen = dm.widthPixels;
-        return wScreen;
-    }
-
-    public static int getScreenHeight(Context context) {
-        DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        int hScreen = dm.heightPixels;
-        return hScreen;
-    }
-
-    /**
-     * 获取屏幕长宽比
-     *
-     * @param context
-     * @return
-     */
-    public static float getScreenRate(Context context) {
-        Point point = getScreenMetrics(context);
-        float height = point.y;
-        float width = point.x;
-        return (height / width);
-    }
-
-    public static int dpToPx(float dp, Context context) {
-        return dpToPx(dp, context.getResources());
-    }
-
-    public static int dpToPx(float dp, Resources resources) {
-        float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.getDisplayMetrics());
-        return (int) px;
+    public static int px2sp(Context context, float pxValue) {
+        float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (pxValue / fontScale + 0.5f);
     }
 }
